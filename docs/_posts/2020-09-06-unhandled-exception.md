@@ -1,7 +1,6 @@
 ---
 layout: post
-title: Evin Liang, Clarke Middle School
-date: 2020-09-06 8:10AM
+title: Unandled Exception
 ---
 
 0:002>kb
@@ -25,6 +24,7 @@ NumberParameters: 5
 0:002> !error c000070a
 Error code: (NTSTATUS) 0xc000070a (3221227274) - Status 0x%08x was returned, waiting on handle 0x%x for wait 0x%p, in waiter 0x%p.
 (https://stackoverflow.com/questions/37358549/net-service-crashes-in-unmanaged-thread-with-unknown-exception)
+(https://devblogs.microsoft.com/oldnewthing/20160115-00/?p=92861)
 
 0:002> .cxr 021ef21c
 eax=021ef71c ebx=00000728 ecx=770eb4fb edx=77116bb4 esi=01355af0 edi=0717d910

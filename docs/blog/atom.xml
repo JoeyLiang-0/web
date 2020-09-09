@@ -4,14 +4,14 @@ layout: feed
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-	<title>Evin Liang's Blog</title>
+	<title>Joey Liang's Blog</title>
 	<link href="http://ezget.info/blog/atom.xml" rel="self"/>
 	<link href="http://ezget.info/blog"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
 	<id>http://ezget.info/blog</id>
 	<author>
-		<name>Evin Liang</name>
-		<email>xxx@gmail.com</email>
+		<name>Joey Liang</name>
+		<email>???</email>
 	</author>
 
 	{% for post in site.posts %}

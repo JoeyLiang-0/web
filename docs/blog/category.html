@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div id="categories" style="display: none;">
+  <ul>
+    {% for category in site.categories %}
+      <li><a href="/blog/category.html#category-{{ category[0] }}">{{ category[0] }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% for category in site.categories %}
+  <div id="category-{{ category[0] }}" style="display: none">
+    <h1>Category: {{ category[0] }}</h1><br />
+    <ul>
+      {% for post in category[1] limit:5 %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
+
+<script>
+  if (window.location.href.includes("#")) {
+    var a = window.location.href.split("#")[1];
+    document.getElementById(a).style.display = "block";
+  } else {
+    document.getElementById("categories").style.display = "block";
+  }
+</script>

@@ -18,35 +18,30 @@ nav {
     font-family: var(--font-base,"Lato",sans-serif);
 }  
 nav a {
-    float: left;
-    /*text-align: center; */
-    padding: 6pt 8pt;
+    position: relative;
+    display: inline-block;
+    margin-top: 3pt;
+    padding: 4pt 6pt 4pt 6pt;
     text-decoration: none;
     color: inherit;
 }  
+nav a:hover {
+    background-color: #0080f0;
+}
 nav a.active {
     background-color: #008080;
 }
 nav .dropDown {
-    float: left;
-    overflow: hidden;
-}
-nav .dropDown .dropButton {
-    border: none;
-    outline: none;
-    padding: 6pt 8pt;
-}
-nav a:hover, nav .dropDown:hover .dropButton {
-    background-color: #0080f0;
+    position: relative;
+    display: inline-block;
 }
 nav .dropDown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    margin-top: 25pt;
     min-width: 160pt;
     border: 1px dotted gray;
-    box-shadow: 0pt 8pt 16pt 0pt #000040;
+    box-shadow: 0pt 8pt 16pt 0pt #102040;
     z-index: 1;
 }
 nav .dropDown-content a {
@@ -60,7 +55,7 @@ nav .dropDown-content a {
 }
 nav .dropDown-content a:hover {
     background-color: #80d0d0;
-}  
+}
 nav .dropDown:hover .dropDown-content {
     display: block;
 }

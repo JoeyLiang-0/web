@@ -9,7 +9,7 @@
     </head>
     
     <body>
-        <div class="topNavBar">
+        <nav>
             <a id="menu.home" href="/">Home</a>
             <a id="menu.blog" href="/blog/index.html">Blog</a>
             <a id="menu.contact" href="/contact/index.html">Contact</a>
@@ -17,16 +17,15 @@
             <div style="float: right; margin:5pt; font-size:16pt; color: gray;">
               Joey Liang
             </div>
-        </div>
+        </nav>
+
         <script type="text/javascript">
             SetActiveMenu();
         </script>
           
-        <div class="mainContent">
-        
-        {{ content }}
-        
-        </div>
+        <section>        
+            {{ content }}        
+        </section>
         <br clear="all">
         
         <footer>

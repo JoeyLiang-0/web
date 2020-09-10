@@ -84,21 +84,14 @@ section {
     min-height: 100pt;
     box-sizing: border-box;
 }
-.sectionContent {
-    width: calc(100% - 15em); /* sync to .sectionBar.width */
-    float: left;
-    border-right: 1px dotted gray;
-}
 .sectionBar {
-    width: 15em;
+    width: 18em;
     float: right;
 }    
-.sectionBar ul {
-    list-style: none; 
-    padding: 0px; 
-}
-.sectionBar ul li a {
-    color: #303030;
+.sectionContent {
+    width: calc(100% - 18em); /* sync to .sectionBar.width */
+    float: left;
+    border-right: 1px dotted gray;
 }
 
 /*
@@ -119,7 +112,7 @@ footer {
     align-items: center;
 }
 footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-family: var(--font-base,"Lato",sans-serif);
     padding: 0px;
     list-style: none;
     font-weight: bold;
@@ -132,19 +125,12 @@ footer ul li {
 
 a {
     text-decoration: none;
-    color: darkblue;
+    color: #002060;
 }
 a:hover {
     text-decoration: underline;
 }
 
-ul.posts { 
-    margin: 10pt auto 20pt; 
-    font-size: 1.5em;
-}
-ul.posts li {
-    list-style: none;
-}
 
 h1 {
     text-align: center;
@@ -159,4 +145,9 @@ h2 {
   
 h3 {
     font-size: 1.8em;
+}
+
+.meta {
+    font-size: 1.0em;
+    font-style: italic;
 }

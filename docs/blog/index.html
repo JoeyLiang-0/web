@@ -25,7 +25,9 @@ title: Blog
             <strong>{{ category[0] }}</strong><br />
             <ul>
                 {% for post in category[1] limit:5 %}
-                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                <li>
+                    {{ post.date | date_to_string }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                </li>
                 {% endfor %}
             </ul>
             </div>
@@ -35,51 +37,30 @@ title: Blog
     <div class="dotLineLeft">
         <h3>Time Line</h3>
 
-        {% assign year0 = "" %}
-        {% assign month0 = "" %}
-
-        {% for post in site.posts %}
-
-            {% assign year = page.date | date: "%Y" %} 
-            {% assign month = page.date | date: "%m" %} 
-            {% assign month = page.date | date: "%d" %} -- test only
-
-            <!-- close tag if, month first, suppose month/month0 will not overlap crossing the year -->
-            {% if month != month0 and month0 != "" %}
-                </ul></details>
+        {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+        {% for year in postsByYear %}
+            {% if forloop.first %}
+                <details>
+            {% else %}
+                <details>
             {% endif %}
-            {% if year != year0 and year0 != "" %}
-                </details>
-            {% endif %}
+            <summary>{{ year.name }}</summary>
 
-            <!-- open tag if, year first, suppose month/month0 will not overlap crossing the year -->
-            {% if year != year0 %}
-                {% if year0 == "" %}
-                    <details open>
-                {% else %}
-                    <details>
-                {% endif %}
-                <summary>{{ year }}</summary>
-            {% endif %}
-            {% if month != month0 %}
-                {% if month0 == "" %}
-                    <details open>
-                {% else %}
-                    <details>
-                {% endif %}
-                <summary>{{ month }}</summary><ul>
-            {% endif %}
+            {% assign postsByMonth = year.items | group_by_exp:"post", "post.date | date: '%B'" %}
 
-            {% assign year0 = year %}
-            {% assign month0 =month %}
+            {% for month in postsByMonth %}
+                {{ month.name }}
+                <ul>
+                {% for post in month.items %}
+                    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endfor %}
+                </ul>
+            {% endfor %} <!-- months -->
 
-            <li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-        {% endfor %}
+            </details>
+            <br>
+        {% endfor %}    <!-- years -->
 
-        <!-- close both tags -->
-            </ul></details>
-        </details>
-
-</div>
+    </div>
 
 </div>

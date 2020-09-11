@@ -35,14 +35,50 @@ title: Blog
     <div class="dotLineLeft">
         <h3>Time Line</h3>
 
+        {% assign year0 = "" %}
+        {% assign month0 = "" %}
+
         {% for post in site.posts %}
-        <li>
-            {{ post.date | date_to_string }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li>
-        <li>
-            {{ post.year | date_to_string }}.{{ post.month | date_to_string }}.{{ post.day | date_to_string }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li>
+
+            {% assign year = page.date | date: "%Y" %} 
+            {% assign month = page.date | date: "%m" %} 
+            {% assign month = page.date | date: "%d" %} -- test only
+
+            <!-- close tag if, month first, suppose month/month0 will not overlap crossing the year -->
+            {% if month != month0 and month0 != "" %}
+                </ul></details>
+            {% endif %}
+            {% if year != year0 and year0 != "" %}
+                </details>
+            {% endif %}
+
+            <!-- open tag if, year first, suppose month/month0 will not overlap crossing the year -->
+            {% if year != year0 %}
+                {% if year0 == "" %}
+                    <details open>
+                {% else %}
+                    <details>
+                {% endif %}
+                <summary>{{ year }}</summary>
+            {% endif %}
+            {% if month != month0 %}
+                {% if month0 == "" %}
+                    <details open>
+                {% else %}
+                    <details>
+                {% endif %}
+                <summary>{{ month }}</summary><ul>
+            {% endif %}
+
+            {% assign year0 = year %}
+            {% assign month0 =month %}
+
+            <li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
         {% endfor %}
+
+        <!-- close both tags -->
+            </ul></details>
+        </details>
 
 </div>
 

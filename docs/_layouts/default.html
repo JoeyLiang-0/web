@@ -9,6 +9,10 @@
     </head>
     
     <body>
+        <header>
+            <h1>{{ page.title }}</h1>
+        </header>
+
         <nav>
             <a id="menu.home" href="/">Home</a>
             <a id="menu.blog" href="/blog/index.html">Blog</a>
@@ -26,13 +30,12 @@
             <div style="float: right; padding-top: 2pt; padding-right:5pt; font-size:16pt; color: gray;">
               Joey Liang
             </div>
-
         </nav>
 
         <script type="text/javascript">
             SetActiveMenu();
         </script>
-          
+        
         <section>        
             {{ content }}        
         </section>

@@ -37,24 +37,35 @@ title: Blog
     <div class="dotLineLeft">
         <h3>Time Line</h3>
 
+        {% assign bOpenDetails = true %}
+
         {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
         {% for year in postsByYear %}
-            {% if forloop.first %}
-                <details>
+            {% if bOpenDetails == true %}
+                <details open>
             {% else %}
                 <details>
             {% endif %}
-            <summary>{{ year.name }}</summary>
+            <summary><strong>{{ year.name }}</strong></summary>
 
             {% assign postsByMonth = year.items | group_by_exp:"post", "post.date | date: '%B'" %}
 
             {% for month in postsByMonth %}
-                {{ month.name }}
-                <ul>
+                {% if bOpenDetails == true %}
+                    <details open>
+                    {% assign bOpenDetails = false %}
+                {% else %}
+                    <details>
+                {% endif %}
+                <summary>{{ month.name }}</summary>                
+
+                <ul style="margin-top:2pt;margin-bottom:1pt;">
                 {% for post in month.items %}
                     <li><a href="{{ post.url }}">{{ post.title }}</a></li>
                 {% endfor %}
                 </ul>
+
+                </details>
             {% endfor %} <!-- months -->
 
             </details>

@@ -75,7 +75,8 @@ section {
 }
 
 
-/* put content of sectionBar first in html */
+/* side-by-side, menu bar on right
+   put content of sectionBar first in html */
 .sectionContent, .sectionBar { 
     padding: 10pt;
     min-height: 100pt;
@@ -88,6 +89,22 @@ section {
 .sectionContent {
     width: calc(100% - 18em); /* sync to .sectionBar.width */
     float: left;
+    border-right: 1px dotted gray;
+}
+
+.flex-container {
+    width: 95%;
+	min-height: 300px;
+	margin: 0 auto;
+	display: -webkit-flex; /* Safari */		
+	display: flex; /* Standard syntax */
+}
+.flex-container .flex {
+	padding: 10px;
+	-webkit-flex: 1; /* Safari */
+	-ms-flex: 1; /* IE 10 */
+	flex: 1; /* Standard syntax */
+    border-left: 1px dotted gray;
     border-right: 1px dotted gray;
 }
 

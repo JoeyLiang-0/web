@@ -66,7 +66,6 @@ header {
 }
 header h1 {
     padding-top: 20pt;
-    font-size: 2.5em;
 }
 
 section {
@@ -99,13 +98,15 @@ section {
 	display: -webkit-flex; /* Safari */		
 	display: flex; /* Standard syntax */
 }
-.flex-container .flex {
+.flex-container div, .flex-container .flex {
 	padding: 10px;
 	-webkit-flex: 1; /* Safari */
 	-ms-flex: 1; /* IE 10 */
 	flex: 1; /* Standard syntax */
+}
+
+.dotLineLeft {
     border-left: 1px dotted gray;
-    border-right: 1px dotted gray;
 }
 
 /*
@@ -153,15 +154,14 @@ h1 {
 }
 
 h2 {
-    font-size: 2.2em;
-    /*margin-top: 0pt; */
+    font-size: 2em;
 }
   
 h3 {
-    font-size: 1.8em;
+    font-size: 1.5em;
 }
 
-.meta {
+.postMetadata {
     font-size: 1.0em;
     font-style: italic;
 }

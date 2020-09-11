@@ -2,7 +2,7 @@
 layout: post
 title: Unandled Exception
 date: 2020-09-06 8:10AM
-category: tech
+categories: tech test
 ---
 ```
 0:002>kb

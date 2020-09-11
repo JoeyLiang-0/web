@@ -2,14 +2,13 @@
 layout: default
 ---
 
-    <p class="meta">{{ page.date | date_to_string }}</p>
-    <p><em>
+    <p class="postMetadata">{{ page.date | date_to_string }}<br>
       {%- if page.categories.size > 0 -%}
-        In: {% for category in page.categories -%}
-          <a href="/blog/category.html#category-{{ category }}">{{ category }}</a>
+        Category: {% for category in page.categories -%}
+          <a href="/blog/category.html#category-{{ category }}">{{ category }}</a>&nbsp;
         {%- endfor %}
       {%- endif -%}
-    </em></p>
+    </p>
 
     <div class="sectionBar">
         Recent posts:

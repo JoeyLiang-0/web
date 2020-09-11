@@ -5,7 +5,7 @@ title: Blog
 
 <div class="flex-container">
 
-    <div>
+    <div class="flex" style="min-width:20rem;">
         <h3>Recent Posts</h3>
 
         <ul>
@@ -17,7 +17,7 @@ title: Blog
         </ul>
     </div>
 
-    <div class="dotLineLeft">
+    <div class="flex dotLineLeft" style="min-width:20rem;">
         <h3>Categories</h3>
 
         {% for category in site.categories %}
@@ -34,7 +34,7 @@ title: Blog
         {% endfor %}
     </div>
 
-    <div class="dotLineLeft">
+    <div class="flex dotLineLeft" style="min-width:20rem;">
         <h3>Time Line</h3>
 
         {% assign bOpenDetails = true %}

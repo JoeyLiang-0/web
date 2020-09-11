@@ -2,25 +2,27 @@
 layout: default
 ---
 
-    <p class="postMetadata">{{ page.date | date_to_string }}<br>
-      {%- if page.categories.size > 0 -%}
-        Category: {% for category in page.categories -%}
-          <a href="/blog/category.html#category-{{ category }}">{{ category }}</a>&nbsp;
-        {%- endfor %}
-      {%- endif -%}
-    </p>
+<p class="postMetadata">{{ page.date | date_to_string }}<br>
+  {%- if page.categories.size > 0 -%}
+    Category: {% for category in page.categories -%}
+      <a href="/blog/category.html#category-{{ category }}">{{ category }}</a>&nbsp;
+    {%- endfor %}
+  {%- endif -%}
+</p>
 
-    <div class="sectionBar">
-        Recent posts:
-        <ul>
-          {% for post in site.posts limit:10 %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-          {% endfor %}
-        </ul>
-    </div>
+<div class="flex-container">
   
-    <div class="sectionContent">
+    <div class="dotLineRight" style="min-width:30rem;">
       {{ content }}
     </div>
 
-  
+    <div class="flex" style="width:20rem; min-width:15rem;">
+      Recent posts:
+      <ul>
+        {% for post in site.posts limit:10 %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+</div>  

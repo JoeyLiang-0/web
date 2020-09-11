@@ -1,6 +1,6 @@
 body {
-    margin: 0pt auto;
-    padding: 0pt;
+    margin: 0px auto;
+    padding: 0px;
     font-size: 1.1em;
     background: #e0f0f0;
 }
@@ -11,18 +11,18 @@ nav {
     position: fixed; 
     top: 0;
     width: 100%; /* Full width */
-    border-bottom: 4pt solid #80c0f0;
+    border-bottom: 0.5rem solid #80c0f0;
     color: white;
     background-color: #303030;
-    font-size: 14pt;
+    font-size: 1.2rem;
     font-family: var(--font-base,"Lato",sans-serif);
 }  
 nav a {
     position: relative;
     display: inline-block;
-    margin-top: 3pt;
-    padding: 4pt 6pt 4pt 6pt;
-    border-radius: 5pt 5pt 0pt 0pt;
+    margin-top: 0.2rem;
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+    border-radius: 0.3rem 0.4rem 0px 0px;
     text-decoration: none;
     color: inherit;
 }  
@@ -40,15 +40,15 @@ nav .dropDown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160pt;
+    min-width: 10rem;
     border: 1px dotted gray;
-    box-shadow: 0pt 8pt 16pt 0pt #102040;
+    box-shadow: 0px 0.5rem 1rem 0px #102040;
     z-index: 1;
 }
 nav .dropDown-content a {
     display: block;
     color: black;
-    font-size: 12pt;
+    font-size: 1rem;
     border-radius: 0pt;
 }
 nav .dropDown-content a:hover {
@@ -59,70 +59,48 @@ nav .dropDown:hover .dropDown-content {
 }
   
 header {
-    /*margin-top: 20pt;*/
     width: 100%; 
-    height: 72pt;
+    height: 7rem;
     background-image: linear-gradient(#80c0f0, #a0c0f0, #e0f0f0);   /* 1st = nav.border-bottom, 3rd = body.background */
 }
 header h1 {
-    padding-top: 20pt;
+    padding-top: 1rem;
+    margin-bottom: 0px;
 }
 
 section {
-    margin: 30pt 10pt 10pt 10pt;
     width: 100%;
-}
-
-
-/* side-by-side, menu bar on right
-   put content of sectionBar first in html */
-.sectionContent, .sectionBar { 
-    padding: 10pt;
-    min-height: 100pt;
-    box-sizing: border-box;
-}
-.sectionBar {
-    width: 18em;
-    float: right;
-}    
-.sectionContent {
-    width: calc(100% - 18em); /* sync to .sectionBar.width */
-    float: left;
-    border-right: 1px dotted gray;
+    font-size: 1rem;
 }
 
 .flex-container {
-    width: 95%;
-	min-height: 300px;
-	margin: 0 auto;
+    margin: 0.5rem;
 	display: -webkit-flex; /* Safari */		
-	display: flex; /* Standard syntax */
+    display: flex; /* Standard syntax */
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
-.flex-container div, .flex-container .flex {
-	padding: 10px;
+section .flex {
+	padding: 1rem;
 	-webkit-flex: 1; /* Safari */
 	-ms-flex: 1; /* IE 10 */
 	flex: 1; /* Standard syntax */
 }
 
 .dotLineLeft {
+    padding-left: 1rem;
     border-left: 1px dotted gray;
 }
-
-/*
-.clearfix:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
+.dotLineRight {
+    padding-right: 1rem;
+    border-right: 1px dotted gray;
 }
-*/
 
 footer {
-    margin-top: 10pt;
+    margin-top: 1rem;
     border-top: 1px solid lightskyblue;
-    font-size: 1em;
+    border-bottom: 1px solid lightskyblue;
+    font-size: 1.1rem;
     text-align: center;
     align-items: center;
 }
@@ -134,8 +112,8 @@ footer ul {
 }
 footer ul li {
     display: inline;
-    margin-left: 10pt;
-    margin-right: 10pt;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 a {
@@ -149,19 +127,19 @@ a:hover {
 
 h1 {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     /*font-family:'Helvetica', 'Arial', 'Sans-Serif';*/
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2rem;
 }
   
 h3 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
-.postMetadata {
-    font-size: 1.0em;
+.metadata {
+    font-size: 0.9rem;
     font-style: italic;
 }

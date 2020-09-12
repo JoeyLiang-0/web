@@ -46,9 +46,9 @@ layout: default
 
             <!-- match ? -->
             {% assign bMatch = false %}
-            {% for rCategory in post.categories -%}
+            {% for rCategory in post.categories %}
               {% if page.categories contains rCategory %}
-                  {% assign bMatch = false %}
+                  {% assign bMatch = true %}
                   {% break %}
               {% endif %}
             {% endfor %}

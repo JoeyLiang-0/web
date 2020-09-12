@@ -2,8 +2,9 @@
 layout: default
 ---
 
-<p class="postMetadata">{{ page.date | date_to_string }}<br>
+<p class="metadata">{{ page.date | date_to_string }}
   {%- if page.categories.size > 0 -%}
+    &nbsp; - &nbsp;
     Category: {% for category in page.categories -%}
       <a href="/blog/category.html#category-{{ category }}">{{ category }}</a>&nbsp;
     {%- endfor %}

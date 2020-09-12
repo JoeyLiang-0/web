@@ -64,8 +64,7 @@ header {
     background-image: linear-gradient(#80c0f0, #a0c0f0, #e0f0f0);   /* 1st = nav.border-bottom, 3rd = body.background */
 }
 header h1 {
-    padding-top: 1rem;
-    margin-bottom: 0px;
+    padding-top: 1.3rem;
 }
 
 section {
@@ -127,16 +126,16 @@ a:hover {
 
 h1 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     /*font-family:'Helvetica', 'Arial', 'Sans-Serif';*/
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
   
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .metadata {

@@ -17,12 +17,58 @@ layout: default
     </div>
 
     <div class="flex" style="width:20rem; min-width:15rem;">
-      Recent posts:
+      <strong>Recent:</strong>
       <ul>
         {% for post in site.posts limit:10 %}
           <li><a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>
+
+      <hr>
+
+      {%- if page.categories.size > 0 -%}
+        <strong>Related:</strong>
+        <ul>
+
+          {% assign relatedCount = 0 %}
+
+          {% for post in site.posts %}
+            
+            <!-- no category -->
+            {% if post.categories.size < 1 %}
+              {% continue %}
+            {% endif %}
+
+            <!-- self -->
+            {% if post.date == page.date and post.title == page.title %}
+              {% continue %}
+            {% endif %}
+
+            <!-- match ? -->
+            {% assign bMatch = false %}
+            {% for rCategory in post.categories -%}
+              {% if page.categories contains rCategory %}
+                  {% assign bMatch = false %}
+                  {% break %}
+              {% endif %}
+            {% endfor %}
+            {% if bMatch == false %}
+              {% continue %}
+            {% endif %}
+
+            <li>
+              {{ post.date | date_to_string }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+            </li>
+
+            {% increment relatedCount %}
+            {% if relatedCount > 10 %}
+                {% break %}
+            {% endif %}
+          {% endfor %}
+
+        </ul>
+      {% endif %}
+            
     </div>
 
 </div>  

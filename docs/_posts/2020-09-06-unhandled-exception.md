@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Unandled Exception
 date: 2020-09-06 8:10AM
 categories: tech test

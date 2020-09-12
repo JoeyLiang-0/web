@@ -10,7 +10,7 @@ title: Blog
         <ul>
             {% for post in site.posts limit:10 %}
             <li>
-                {{ post.date | date_to_string }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                {{ post.date | date: "%Y.%m.%d" }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
             </li>
             {% endfor %}
         </ul>
@@ -25,7 +25,7 @@ title: Blog
                 <ul>
                     {% for post in category[1] limit:5 %}
                     <li>
-                        {{ post.date | date_to_string }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                        {{ post.date | date: "%Y.%m.%d" }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                     </li>
                     {% endfor %}
                 </ul>
@@ -48,7 +48,7 @@ title: Blog
             {% endif %}
             <summary><strong>{{ year.name }}</strong></summary>
 
-            {% assign postsByMonth = year.items | group_by_exp:"post", "post.date | date: '%B'" %}
+            {% assign postsByMonth = year.items | group_by_exp:"post", "post.date | date: '%m'" %}
 
             {% for month in postsByMonth %}
                 {% if bOpenDetails == true %}

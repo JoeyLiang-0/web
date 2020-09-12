@@ -3,7 +3,7 @@ layout: default
 ---
 
 <p class="metadata">
-  {{ page.date | date_to_string }} &nbsp; - &nbsp;
+  {{ page.date | date: "%Y.%m.%d" }} &nbsp; - &nbsp;
   Category: {% for category in page.categories %}
       <a href="/blog/category.html?name={{ category }}">{{ category }}</a>&nbsp;
   {%- endfor %}
@@ -21,7 +21,7 @@ layout: default
       <ul>
         {% for post in site.posts limit:10 %}
           <li>
-            {{ post.date | date_to_string }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+            {{ post.date | date: "%Y.%m.%d" }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
           </li>
         {% endfor %}
       </ul>
@@ -55,7 +55,7 @@ layout: default
             {% endif %}
 
             <li>
-              {{ post.date | date_to_string }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+              {{ post.date | date: "%Y.%m.%d" }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
             </li>
 
             {% assign relatedCount = relatedCount | plus: 1 %}

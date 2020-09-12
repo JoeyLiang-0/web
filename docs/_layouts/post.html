@@ -12,7 +12,7 @@ layout: default
 
 <div class="flex-container">
   
-    <div class="dotLineRight" style="min-width:30rem;">
+    <div class="flex dotLineRight" style="min-width:30rem;">
       {{ content }}
     </div>
 
@@ -60,13 +60,14 @@ layout: default
               {{ post.date | date_to_string }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
             </li>
 
-            {% increment relatedCount %}
+            {% assign relatedCount = relatedCount + 1 %}
             {% if relatedCount > 10 %}
                 {% break %}
             {% endif %}
           {% endfor %}
 
         </ul>
+        count: {{ relatedCount }}
       {% endif %}
             
     </div>

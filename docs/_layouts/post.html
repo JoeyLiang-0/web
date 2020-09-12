@@ -2,13 +2,11 @@
 layout: default
 ---
 
-<p class="metadata">{{ page.date | date_to_string }}
-  {%- if page.categories.size > 0 -%}
-    &nbsp; - &nbsp;
-    Category: {% for category in page.categories -%}
-      <a href="/blog/category.html#category-{{ category }}">{{ category }}</a>&nbsp;
-    {%- endfor %}
-  {%- endif -%}
+<p class="metadata">
+  {{ page.date | date_to_string }} &nbsp; - &nbsp;
+  Category: {% for category in page.categories %}
+      <a href="/blog/category.html?name={{ category }}">{{ category }}</a>&nbsp;
+  {%- endfor %}
 </p>
 
 <div class="flex-container">
@@ -38,11 +36,6 @@ layout: default
 
           {% for post in site.posts %}
             
-            <!-- no category -->
-            {% if post.categories.size < 1 %}
-              {% continue %}
-            {% endif %}
-
             <!-- self -->
             {% if post.date == page.date and post.title == page.title %}
               {% continue %}
@@ -50,12 +43,13 @@ layout: default
 
             <!-- match ? -->
             {% assign bMatch = false %}
-            {% for rCategory in post.categories %}
-              {% if page.categories contains rCategory %}
+            {% for category in post.categories %}
+              {% if category != "other" and  page.categories contains category %}
                   {% assign bMatch = true %}
                   {% break %}
               {% endif %}
             {% endfor %}
+            
             {% if bMatch == false %}
               {% continue %}
             {% endif %}

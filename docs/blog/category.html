@@ -2,29 +2,44 @@
 title: Blog Category
 ---
 
-<div id="categories" style="display: none;">
-  <ul>
+<div class="flex-container">
+  
+  <div class="flex dotLineRight" style="min-width:30rem;">
+    <h3 id="list-header"></h3>    
     {% for category in site.categories %}
-      <li><a href="/blog/category.html#category-{{ category[0] }}">{{ category[0] }}</a></li>
+      <div id="category-{{ category[0] }}" style="display: none">        
+        <ul>
+          {% for post in category[1] %}
+            <li>{{ post.date | date_to_string }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
     {% endfor %}
-  </ul>
-</div>
-{% for category in site.categories %}
-  <div id="category-{{ category[0] }}" style="display: none">
-    <h1>Category: {{ category[0] }}</h1><br />
+  </div>
+
+  <div class="flex" style="width:20rem; min-width:15rem;">
+    <h3>All Categories:</h3>
     <ul>
-      {% for post in category[1] limit:5 %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% for category in site.categories %}
+        <li><a href="?name={{ category[0] }}">{{ category[0] }}</a></li>
       {% endfor %}
     </ul>
   </div>
-{% endfor %}
 
-<script>
-  if (window.location.href.includes("#")) {
-    var a = window.location.href.split("#")[1];
-    document.getElementById(a).style.display = "block";
-  } else {
-    document.getElementById("categories").style.display = "block";
+</div>  
+
+
+<script type="text/javascript">
+
+  function getURLParameter(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(window.location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
   }
+
+  var categoryName = getURLParameter("name");
+  document.title = "Blog Category - " + categoryName;
+  document.getElementById("page-title").innerText = document.title;
+
+  document.getElementById("list-header").innerText = "Posts in " + categoryName;
+  document.getElementById("category-" + categoryName).style.display = "block";
+
 </script>

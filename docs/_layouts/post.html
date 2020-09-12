@@ -17,6 +17,7 @@ layout: default
     </div>
 
     <div class="flex" style="width:20rem; min-width:15rem;">
+      
       <strong>Recent:</strong>
       <ul>
         {% for post in site.posts limit:10 %}
@@ -64,10 +65,10 @@ layout: default
             {% if relatedCount > 10 %}
                 {% break %}
             {% endif %}
-          {% endfor %}
+            count: {{ relatedCount }}
+            {% endfor %}
 
         </ul>
-        count: {{ relatedCount }}
       {% endif %}
             
     </div>

@@ -17,7 +17,7 @@ layout: default
     </div>
 
     <div class="flex" style="width:20rem; min-width:15rem;">
-      
+
       <strong>Recent:</strong>
       <ul>
         {% for post in site.posts limit:10 %}
@@ -61,7 +61,7 @@ layout: default
               {{ post.date | date_to_string }} » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
             </li>
 
-            {% assign relatedCount = relatedCount + 1 %}
+            {% assign relatedCount = relatedCount | plus: 1 %}
             {% if relatedCount > 10 %}
                 {% break %}
             {% endif %}

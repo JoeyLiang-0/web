@@ -144,3 +144,8 @@ h3 {
     font-size: 0.9rem;
     font-style: italic;
 }
+
+ul {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}

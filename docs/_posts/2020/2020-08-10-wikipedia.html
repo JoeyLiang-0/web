@@ -3,37 +3,15 @@ title: Wikipedia - Reliable Information Source
 categories: evin
 ---
 
-<style type="text/css">
-    img {
-        margin: 0.1rem;
-        width: 10rem;
-        height: 10rem;
-        object-fit: cover;
-        border: 1px dotted gray;
-        /*transition: width 3s;*/
-    }
-</style>
-
-<script type="text/javascript">
-    function OnMouseOver(imgSrc)
-    {
-        var largeImg = document.getElementById("largeImg");
-        largeImg.src = imgSrc;
-        largeImg.style.width = '100%';//'' + largeImg.naturalWidth + 'px';
-        largeImg.style.height = '' + largeImg.naturalHeight + 'px';
-    }
-</script>
-
-<p>
 Thought Wikipedia is a good reliable source when information needed. <br>
 But, just not long ago, I knew that something you trust and relie on could be from a ~11-year old kid, who...!
-</p>
 
-<img src="/images/blog/2020/08-10-wikipedia-contributions.png" onmouseover="OnMouseOver(this.src)">
-<img src="/images/blog/2020/08-10-wikipedia-dragon-curve-1.png" onmouseover="OnMouseOver(this.src)">
-<img src="/images/blog/2020/08-10-wikipedia-dragon-curve-2.png" onmouseover="OnMouseOver(this.src)">
-<img src="/images/blog/2020/08-10-wikipedia-dragon-curve-3.png" onmouseover="OnMouseOver(this.src)">
-<img src="/images/blog/2020/08-10-wikipedia-dragon-curve-4.png" onmouseover="OnMouseOver(this.src)">
+<div class="thumbnail">
+<img src="/images/blog/2020/08-10-wikipedia-contributions.png" onmouseover="UpdateImageAndFitWidth('largeImg', this.src)">
+<img src="/images/blog/2020/08-10-wikipedia-dragon-curve.png" onmouseover="UpdateImageAndFitWidth('largeImg', this.src)">
+<img src="/images/blog/2020/08-10-wikipedia-dragon-curve-1.png" onmouseover="UpdateImageAndFitWidth('largeImg', this.src)">
+<img src="/images/blog/2020/08-10-wikipedia-dragon-curve-2.png" onmouseover="UpdateImageAndFitWidth('largeImg', this.src)">
+<img src="/images/blog/2020/08-10-wikipedia-dragon-curve-3.png" onmouseover="UpdateImageAndFitWidth('largeImg', this.src)">
+</div>
 
-<br>
-<img id="largeImg">
+<img id="largeImg" style="width:1px;">

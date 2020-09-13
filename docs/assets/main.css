@@ -150,27 +150,3 @@ ul {
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
 }
-
-.nav-left {
-    float: left;
-}
-.nav-right {
-    float: right;
-}
-.nav-left, .nav-right {
-    padding: 0.5rem;
-    border-radius: 0.3rem;
-    border: 1px solid gray;
-}
-
-.thumbnail {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-.thumbnail img {
-    margin: 0.1rem;
-    width: 10rem;
-    height: 10rem;
-    object-fit: cover;
-    border: 1px dotted gray;
-}

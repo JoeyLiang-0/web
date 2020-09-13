@@ -2,7 +2,7 @@ body {
     margin: 0px auto;
     padding: 0px;
     font-size: 1.1em;
-    background: #e0f0f0;
+    background: #f8ffff;
 }
 
 /* ----- top navigation bar ----- */
@@ -61,7 +61,7 @@ nav .dropDown:hover .dropDown-content {
 header {
     width: 100%; 
     height: 7rem;
-    background-image: linear-gradient(#80c0f0, #a0c0f0, #e0f0f0);   /* 1st = nav.border-bottom, 3rd = body.background */
+    background-image: linear-gradient(#80c0f0, #a0c0f0, #f8ffff);   /* 1st = nav.border-bottom, 3rd = body.background */
 }
 header h1 {
     padding-top: 1.3rem;
@@ -97,9 +97,9 @@ section .flex {
 
 footer {
     margin-top: 1rem;
-    background: #d0f0f0;
-    border-top: 1px solid #a0f0f0;
-    border-bottom: 1px solid #a0f0f0;
+    background: #f0ffff;
+    border-top: 1px solid #c0ffff;
+    border-bottom: 1px solid #c0ffff;
     font-size: 1.1rem;
     text-align: center;
     align-items: center;

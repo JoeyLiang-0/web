@@ -15,12 +15,9 @@ function SetActiveMenu()
       }
     }
 
-    document.getElementById('menu.' + activeMenuName).classList.add('active');
-
-    if (window.location.hostname == '127.0.0.1')
-    {
-      document.getElementById('TestOnly').style.display = "inline-block";
-    }
+    var activeMenu = document.getElementById('menu.' + activeMenuName);
+    if (activeMenu != null)
+      activeMenu.classList.add('active');
 }
 
 function UpdateImageAndFitWidth(targetImgId, imgSrc)

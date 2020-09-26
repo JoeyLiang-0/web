@@ -4,26 +4,26 @@ layout: default
 
 <link rel="stylesheet" type="text/css" href="/assets/post.css">
 
-<p class="metadata">
+<div class="metadata">
   {{ page.date | date: "%Y.%m.%d" }} &nbsp; - &nbsp;
   Category: {% for category in page.categories %}
       <a href="/blog/category.html?name={{ category }}">{{ category }}</a>&nbsp;
   {%- endfor %}
-</p>
+</div>
 
 <div class="flex-container">
   
     <div class="flex dotLineRight" style="min-width:20rem;">
-      {{ content }}
-
-      <div style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px dotted gray;">
+      <div style="display: flex; margin-bottom: 1rem;">
         {% if page.previous %}
-          <div class="nav-left">&lt;&lt; <a href="{{ page.previous.url }}">{{ page.previous.title }}</a></div>
+            <div class="nav-left">&lt;&lt; <a href="{{ page.previous.url }}">{{ page.previous.title }}</a></div>
         {% endif %}
         {% if page.next %}
-          <div class="nav-right"><a href="{{ page.next.url }}">{{ page.next.title }}</a> &gt;&gt;</div>
+            <div class="nav-right"><a href="{{ page.next.url }}">{{ page.next.title }}</a> &gt;&gt;</div>
         {% endif %}
       </div>
+
+      {{ content }}
     </div>
 
     <div class="flex" style="min-width:15rem; max-width:25rem;">

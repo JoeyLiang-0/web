@@ -14,7 +14,7 @@ layout: default
 <div class="flex-container">
   
     <div class="flex dotLineRight" style="min-width:20rem;">
-      <div style="margin-bottom: 1rem;">
+      <div>
         {% if page.previous %}
             <div class="nav-left">&lt;&lt; <a href="{{ page.previous.url }}">{{ page.previous.title }}</a></div>
         {% endif %}
@@ -22,6 +22,7 @@ layout: default
             <div class="nav-right"><a href="{{ page.next.url }}">{{ page.next.title }}</a> &gt;&gt;</div>
         {% endif %}
       </div>
+      <br clear="all">
 
       {{ content }}
     </div>

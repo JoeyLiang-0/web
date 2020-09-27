@@ -1,14 +1,23 @@
 
-.nav-left {
-    float: left;
+.nav-buttonContainer {
+    display: flex;
+    flex-wrap: nowrap; 
+    margin-bottom: 0.5rem; 
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dotted gray;
 }
-.nav-right {
-    float: right;
+.nav-buttonLeft {
+    text-align: left;
 }
-.nav-left, .nav-right {
-    padding: 0.5rem;
+.nav-buttonRight {
+    text-align: right;
+}
+.nav-buttonLeft, .nav-buttonRight {
+    flex: 1;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     border-radius: 0.3rem;
-    border: 1px solid gray;
+    border: 1px dotted gray;
 }
 
 .thumbnail {

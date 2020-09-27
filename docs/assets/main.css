@@ -143,14 +143,18 @@ h3 {
     font-size: 1.2rem;
 }
 
-.metadata {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    font-size: 0.9rem;
-    font-style: italic;
+img {
+    max-width: 100%;
 }
 
 ul {
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
+}
+
+.metadata {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.9rem;
+    font-style: italic;
 }

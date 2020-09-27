@@ -24,7 +24,6 @@ function UpdateImageAndFitWidth(targetImgId, imgSrc)
 {
     var targetImg = document.getElementById(targetImgId);
     targetImg.src = imgSrc;
-    targetImg.style.width = '100%';
-    targetImg.style.maxWidth = '' + targetImg.naturalWidth + 'px';
+    targetImg.style.width = '' + targetImg.naturalWidth + 'px';
 }
 

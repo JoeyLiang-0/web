@@ -3,8 +3,11 @@
     display: flex;
     flex-wrap: nowrap; 
     margin-bottom: 0.5rem; 
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.2rem;
     border-bottom: 1px dotted gray;
+}
+.nav-buttonFillSpace {
+    flex: 1;
 }
 .nav-buttonLeft {
     text-align: left;
@@ -13,7 +16,7 @@
     text-align: right;
 }
 .nav-buttonLeft, .nav-buttonRight {
-    flex: 1;
+    /*flex: 1;*/
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     border-radius: 0.3rem;

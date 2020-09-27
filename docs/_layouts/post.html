@@ -11,13 +11,22 @@ layout: default
   {%- endfor %}
 </div>
 
+<!-- for testing locally
+<div class="nav-buttonContainer">
+    <div class="nav-buttonLeft">&lt;&lt; <a href="{{ page.previous.url }}">{{ page.previous.title }}</a></div>
+    <div class="nav-buttonFillSpace">&nbsp;</div>
+    <div class="nav-buttonRight"><a href="{{ page.next.url }}">{{ page.next.title }}</a> &gt;&gt;</div>
+</div>
+-->
+
 <div class="flex-container">
 
     <div class="flex dotLineRight" style="min-width:20rem;">
       <div class="nav-buttonContainer">
         {% if page.previous %}
           <div class="nav-buttonLeft">&lt;&lt; <a href="{{ page.previous.url }}">{{ page.previous.title }}</a></div>
-        {% endif %}        
+        {% endif %}
+        <div class="nav-buttonFillSpace">&nbsp;</div>
         {% if page.next %}
           <div class="nav-buttonRight"><a href="{{ page.next.url }}">{{ page.next.title }}</a> &gt;&gt;</div>
         {% endif %}

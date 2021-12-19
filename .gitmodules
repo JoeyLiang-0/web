@@ -1,3 +1,0 @@
-[submodule "web.server"]
-	path = web.server
-	url = git@github.com:joey-us/web.server.git

@@ -1,0 +1,16 @@
+--json
+--logger_min_status=2
+--enable_yara_string
+--yara_delay=0
+--config_path=C:\Program Files\Confer\Blades\LiveQuery\osquery.conf
+--killswitch_config_path=C:\Program Files\Confer\Blades\LiveQuery\killswitch.conf
+--numeric_monitoring_filesystem_path=C:\Program Files\Confer\Blades\LiveQuery\numeric_monitoring.log
+--pidfile=C:\Program Files\Confer\Blades\LiveQuery\osqueryd.pidfile
+--tls_server_certs=C:\Program Files\Confer\Blades\LiveQuery\certs.pem
+--logger_path=""
+--disable_extensions=false
+--extensions_interval=1
+--extensions_timeout=30
+--extensions_autoload=C:\Program Files\Confer\Blades\LiveQuery\LiveQueryExtensions.load
+--extensions_require=cb_sensor_extension
+--allow_unsafe
